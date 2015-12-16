@@ -16,21 +16,14 @@ end
 
 EM.run do
   ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
-  counter = 0
-  # EM.add_periodic_timer(2) do
-  #
-  #   puts "hello " + counter.to_s
-  #   counter += 1
-  #   light_reading = arduino_read_light
-  #   puts light_reading
-  # end
 
-  EM.add_periodic_timer(0.5) do
+  EM.add_periodic_timer(1) do
     if ws
       p 'sending'
 
       ws.send({ data: { light: arduino_read_light, temp: arduino_read_temp }, channel: '/arduino' }.to_json)
-      end
+    else p 'no socket present'
+    end
   end
 end
 
