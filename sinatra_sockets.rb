@@ -1,15 +1,15 @@
 require 'rubygems'
 require 'sinatra'
 require 'tilt/erb'
-require 'arduino_firmata'
+# require 'arduino_firmata'
 require 'gon-sinatra'
 require 'sinatra/reloader' if development?
 
 module MyChat
   class SinatraApp < Sinatra::Base
 
-    arduino = ArduinoFirmata.connect
-    arduino.pin_mode 8, ArduinoFirmata::INPUT
+    # arduino = ArduinoFirmata.connect
+    # arduino.pin_mode 8, ArduinoFirmata::INPUT
 
     register Gon::Sinatra
 
