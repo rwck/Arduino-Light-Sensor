@@ -23,26 +23,30 @@ module MyChat
     set :bind, 'shrouded-cliffs-5129.herokuapp.com'
 
     get '/' do
-      light_level = arduino.analog_read 0
-      puts "The light level is currently #{light_level}"
-      gon.light_level = light_level
-
-      temperature_sensor_reading = arduino.analog_read 1
-      puts "The temperature sensor reading is currently #{temperature_sensor_reading}"
-      gon.temperature_sensor_reading = temperature_sensor_reading
-      temperature = ((temperature_sensor_reading*5000)/1024)/100
-
-      value = arduino.digital_read 8
-      puts value
-      if value == true
-        text = "on"
-      else
-        text = "off"
-      end
-
-      gon.text = text
-      puts "The switch is currently #{gon.text}"
-      erb :index, :locals => {text: text, lightLevel: light_level, temperature: temperature}
+      erb :index
     end
+
+    # get '/' do
+    #   light_level = arduino.analog_read 0
+    #   puts "The light level is currently #{light_level}"
+    #   gon.light_level = light_level
+    #
+    #   temperature_sensor_reading = arduino.analog_read 1
+    #   puts "The temperature sensor reading is currently #{temperature_sensor_reading}"
+    #   gon.temperature_sensor_reading = temperature_sensor_reading
+    #   temperature = ((temperature_sensor_reading*5000)/1024)/100
+    #
+    #   value = arduino.digital_read 8
+    #   puts value
+    #   if value == true
+    #     text = "on"
+    #   else
+    #     text = "off"
+    #   end
+    #
+    #   gon.text = text
+    #   puts "The switch is currently #{gon.text}"
+    #   erb :index, :locals => {text: text, lightLevel: light_level, temperature: temperature}
+    # end
   end
 end
