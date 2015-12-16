@@ -14,9 +14,8 @@ def arduino_read_temp
   temp_level = arduino.analog_read 1
 end
 
-
 EM.run do
-  ws = Faye::WebSocket::Client.new('ws://localhost:9292/faye')
+  ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
 
   ws.on :open do |_event|
     p [:open]
@@ -41,11 +40,10 @@ EM.run do
   end
 
   EM.add_periodic_timer(0.5) do
-
     if ws
       p 'sending'
 
-      ws.send({data: {light: arduino_read_light, temp: arduino_read_temp}, channel: '/arduino' }.to_json)
-      end
+      ws.send({ data: { light: arduino_read_light, temp: arduino_read_temp }, channel: '/arduino' }.to_json)
+    end
   end
 end

@@ -7,7 +7,6 @@ require 'logger'
 require_relative 'echo_server'
 require_relative 'sinatra_sockets'
 
-
 Faye::WebSocket.load_adapter('puma')
 
 # Faye.logger = Logger.new(STDOUT)
@@ -15,6 +14,6 @@ Faye::WebSocket.load_adapter('puma')
 
 use Faye::RackAdapter, :mount => '/faye', :timeout => 100
 
-use MyChat::EchoServer
+# use MyChat::EchoServer
 
 run MyChat::SinatraApp

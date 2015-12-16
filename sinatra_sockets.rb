@@ -18,11 +18,9 @@ module MyChat
     # configure :production do
     enable :reloader
 
-    set :environment, :development
-    # set :environment, :production
-    # set :bind, '192.168.1.2'
-
-
+    # set :environment, :development
+    set :environment, :production
+    set :bind, 'shrouded-cliffs-5129.herokuapp.com'
 
     get '/' do
       light_level = arduino.analog_read 0
@@ -46,13 +44,5 @@ module MyChat
       puts "The switch is currently #{gon.text}"
       erb :index, :locals => {text: text, lightLevel: light_level, temperature: temperature}
     end
-
-    get '/sockets' do
-      # "Hello world"
-      erb :sockets
-    end
-
-
-
   end
 end
