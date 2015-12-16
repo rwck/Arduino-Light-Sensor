@@ -1,41 +1,39 @@
 require 'faye/websocket'
-require 'arduino_firmata'
+require 'serialport'
 require 'eventmachine'
 require 'json'
 
-def arduino_read_light
-  arduino = ArduinoFirmata.connect
-  # arduino.pin_mode 8, ArduinoFirmata::INPUT
-  light_level = arduino.analog_read 0
-end
+# params for serial port
+port_str = "/dev/cu.usbmodem1411"
+baud_rate = 9600
+data_bits = 8
+stop_bits = 1
+parity = SerialPort::NONE
 
-def arduino_read_temp
-  arduino = ArduinoFirmata.connect
-  temp_level = arduino.analog_read 1
-end
-
-EM.run do
-  ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
-  counter = 0
-  # EM.add_periodic_timer(2) do
-  #
-  #   puts "hello " + counter.to_s
-  #   counter += 1
-  #   light_reading = arduino_read_light
-  #   puts light_reading
-  # end
-
-  EM.add_periodic_timer(0.5) do
-    if ws
-      p 'sending'
-
-      ws.send({ data: { light: arduino_read_light, temp: arduino_read_temp }, channel: '/arduino' }.to_json)
-      end
+sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
+sleep(5)
+while true do
+  puts sp.gets
+  while (i = sp.gets) do
+    # puts i
+    puts sp
   end
 end
+sp.close
 
 
-
+#
+# def arduino_read_light
+#   arduino = ArduinoFirmata.connect
+#   # arduino.pin_mode 8, ArduinoFirmata::INPUT
+#   light_level = arduino.analog_read 0
+# end
+#
+# def arduino_read_temp
+#   arduino = ArduinoFirmata.connect
+#   temp_level = arduino.analog_read 1
+# end
+#
 # EM.run do
 #   ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
 #
