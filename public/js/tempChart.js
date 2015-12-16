@@ -19,7 +19,7 @@ var myTempChart = {
     gauge: {
              label: {
                  format: function(value, ratio) {
-                     return value.round + '°';
+                     return value.toFixed(1) + '°';
                  },
                  show: false // to turn off the min/max labels.
              },
