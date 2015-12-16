@@ -14,36 +14,12 @@ def arduino_read_temp
   temp_level = arduino.analog_read 1
 end
 
-EM.run do
-  ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
 
-  ws.on :open do |_event|
-    p [:open]
-    puts 'Message from client: Socket opened'
-    # ws.send({ligh}.to_json)
-  end
+# ws = Faye::WebSocket::Client.new('ws://localhost:9292/faye')
 
-  ws.on :message do |event|
-    puts 'Message from client: Message received'
-    p [:message, event.data]
-  end
+ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.cocom')
 
-  ws.on :error do |event|
-    puts 'Error'
-    p [:error, event]
-  end
+#
 
-  ws.on :close do |event|
-    p [:close, event.code, event.reason]
-    puts 'Message from client: the socket has closed'
-    ws = nil
-  end
-
-  EM.add_periodic_timer(0.5) do
-    if ws
-      p 'sending'
-
-      ws.send({ data: { light: arduino_read_light, temp: arduino_read_temp }, channel: '/arduino' }.to_json)
-    end
-  end
-end
+p 'sending'
+ws.send({ data: { light: arduino_read_light, temp: arduino_read_temp }, channel: '/arduino' }.to_json)
