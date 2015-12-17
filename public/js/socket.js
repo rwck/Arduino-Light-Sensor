@@ -13,7 +13,7 @@ var subscription = client.subscribe('/arduino', function(data) {
   console.log("Sensors:", data);
   console.log(data.light);
   if (data.light < 100) {
-    playSanta();
+    // playSanta();
     spinMeCSS();
   }
   if (data.light < 300) {
