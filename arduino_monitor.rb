@@ -3,33 +3,49 @@ require 'arduino_firmata'
 require 'eventmachine'
 require 'json'
 
-def arduino_read_light
-  arduino = ArduinoFirmata.connect
-  # arduino.pin_mode 8, ArduinoFirmata::INPUT
-  light_level = arduino.analog_read 0
-end
+class Arduino
 
-def arduino_read_temp
-  arduino = ArduinoFirmata.connect
-  temp_level = arduino.analog_read 1
+  def light
+    arduino.analog_read 0
+  end
+
+  def temp
+    arduino.analog_read 1
+  end
+
+  def led_strobe
+    2.times do
+      arduino.digital_write 13, true
+      sleep 0.2
+      arduino.digital_write 13, false
+      sleep 0.2
+    end
+  end
+
+  private
+
+  def arduino
+    @arduino ||= ArduinoFirmata.connect
+  end
+
 end
 
 EM.run do
   ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
 
-    # ws = Faye::WebSocket::Client.new('ws://localhost:9292/faye')
+  arduino = Arduino.new
 
-  EM.add_periodic_timer(1) do
+  EM.add_periodic_timer(0.25) do
     if ws
       p 'sending'
+      arduino.led_strobe
 
-      ws.send({ data: { light: arduino_read_light, temp: arduino_read_temp }, channel: '/arduino' }.to_json)
+      ws.send({ data: { light: arduino.light, temp: arduino.temp }, channel: '/arduino' }.to_json)
     else p 'no socket present'
     end
+
   end
 end
-
-
 
 # EM.run do
 #   ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
