@@ -1,7 +1,6 @@
-// var client = new Faye.Client('http://localhost:9292/faye');
-// var client = new Faye.Client('http://shrouded-cliffs-5129.herokuapp.com/faye');
+var client = new Faye.Client('http://shrouded-cliffs-5129.herokuapp.com/faye');
 
-var client = new Faye.Client('http://localhost:9292/faye');
+// var client = new Faye.Client('http://localhost:9292/faye');
 
 
 // Logger = {
