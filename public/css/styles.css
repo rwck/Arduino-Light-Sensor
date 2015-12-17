@@ -3,7 +3,7 @@
   /*border: 1px dotted pink;*/
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 550) {
   h1 {
     font-size: 2rem;
   }
@@ -77,8 +77,11 @@ button:focus {
   box-shadow: 4px 4px 12px 0px rgba(0, 0, 0, 0.59);
 }
 
-.my-button:active {
-  box-shadow: none;
+.my-button:hover {
   background-color: black;
   color: yellow;
+}
+
+.my-button:active {
+  box-shadow: none;
 }
