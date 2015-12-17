@@ -5,26 +5,29 @@
 
 h1 {
   text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
 }
 
-#chat-text {
-  background-color: white;
-  min-height: 2rem;
+h2 {
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+}
+
+.invisible {
+  display: none;
 }
 
 .main-container {
   width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
-  height: 100vh;
+  height: 100%;
+  box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.59);
 }
 
-.switched-on {
-  background-color: yellow;
-  color: blue;
-}
-
-.switched-off {
-  background-color: blue;
-  color: yellow;
+.footer p {
+  text-align: center;
 }

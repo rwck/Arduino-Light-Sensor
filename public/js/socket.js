@@ -1,5 +1,7 @@
 // var client = new Faye.Client('http://localhost:9292/faye');
-var client = new Faye.Client('http://shrouded-cliffs-5129.herokuapp.com/faye');
+// var client = new Faye.Client('http://shrouded-cliffs-5129.herokuapp.com/faye');
+
+var client = new Faye.Client('http://localhost:9292/faye');
 
 
 // Logger = {
@@ -23,24 +25,10 @@ function getMessage(newMessage) {
 }
 
 var myReading = {};
-//
-// GiveMeMyMessage = {
-//   incoming: function(message, getMessage) {
-//     if (message.light !== undefined) {
-//     }
-//     console.log("Yarooooo", message.light);
-//     getMessage(message);
-//     if (message.light !== undefined) {
-//       myReading.lightLevel = message.light;
-//     }
-//   }
-// };
-
-// client.addExtension(GiveMeMyMessage);
 
 var subscription = client.subscribe('/arduino', function(data) {
   console.log("Sensors:", data);
-  $("#blob").html(data.light);
+  // $("#blob").html(data.light);
   myChart.chart.load({
     columns: [
       ['data', (data.light/1024) * 100]
@@ -48,7 +36,7 @@ var subscription = client.subscribe('/arduino', function(data) {
   });
   myTempChart.chart.load({
     columns: [
-      ['data', (5.0 * data.temp * 10) / 1024]
+      ['data', (data.temp * 50) / 1024]
     ]
   });
 });

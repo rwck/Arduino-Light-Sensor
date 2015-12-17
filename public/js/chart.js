@@ -1,6 +1,6 @@
 var myChart = {
   chart: c3.generate({
-    bindto: "#chart",
+    bindto: "#light-chart",
     data: {
       columns: [
         ["data", 56]
@@ -42,32 +42,32 @@ var myChart = {
   })
 };
 
-setTimeout(function () {
-    myChart.chart.load({
-        columns: [['data', 10]]
-    });
-}, 1000);
-
-setTimeout(function () {
-    myChart.chart.load({
-        columns: [['data', 50]]
-    });
-}, 2000);
-
-setTimeout(function () {
-    myChart.chart.load({
-        columns: [['data', 70]]
-    });
-}, 3000);
-
-setTimeout(function () {
-    myChart.chart.load({
-        columns: [['data', 0]]
-    });
-}, 4000);
-
-setTimeout(function () {
-    myChart.chart.load({
-        columns: [['data', 100]]
-    });
-}, 5000);
+// setTimeout(function () {
+//     myChart.chart.load({
+//         columns: [['data', 10]]
+//     });
+// }, 1000);
+//
+// setTimeout(function () {
+//     myChart.chart.load({
+//         columns: [['data', 50]]
+//     });
+// }, 2000);
+//
+// setTimeout(function () {
+//     myChart.chart.load({
+//         columns: [['data', 70]]
+//     });
+// }, 3000);
+//
+// setTimeout(function () {
+//     myChart.chart.load({
+//         columns: [['data', 0]]
+//     });
+// }, 4000);
+//
+// setTimeout(function () {
+//     myChart.chart.load({
+//         columns: [['data', 100]]
+//     });
+// }, 5000);

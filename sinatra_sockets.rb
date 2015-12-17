@@ -18,12 +18,17 @@ module MyChat
     # configure :production do
     enable :reloader
 
-    # set :environment, :development
-    set :environment, :production
-    set :bind, 'shrouded-cliffs-5129.herokuapp.com'
+    set :environment, :development
+
+    # set :environment, :production
+    # set :bind, 'shrouded-cliffs-5129.herokuapp.com'
 
     get '/' do
       erb :index
+    end
+
+    get '/how' do
+      erb :how
     end
 
     # get '/' do

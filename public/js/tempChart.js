@@ -41,33 +41,33 @@ var myTempChart = {
     }
   })
 };
-
-setTimeout(function () {
-    myTempChart.chart.load({
-        columns: [['data', 10]]
-    });
-}, 1000);
-
-setTimeout(function () {
-    myTempChart.chart.load({
-        columns: [['data', 50]]
-    });
-}, 2000);
-
-setTimeout(function () {
-    myTempChart.chart.load({
-        columns: [['data', 70]]
-    });
-}, 3000);
-
-setTimeout(function () {
-    myTempChart.chart.load({
-        columns: [['data', 0]]
-    });
-}, 4000);
-
-setTimeout(function () {
-    myTempChart.chart.load({
-        columns: [['data', 100]]
-    });
-}, 5000);
+//
+// setTimeout(function () {
+//     myTempChart.chart.load({
+//         columns: [['data', 10]]
+//     });
+// }, 1000);
+//
+// setTimeout(function () {
+//     myTempChart.chart.load({
+//         columns: [['data', 50]]
+//     });
+// }, 2000);
+//
+// setTimeout(function () {
+//     myTempChart.chart.load({
+//         columns: [['data', 70]]
+//     });
+// }, 3000);
+//
+// setTimeout(function () {
+//     myTempChart.chart.load({
+//         columns: [['data', 0]]
+//     });
+// }, 4000);
+//
+// setTimeout(function () {
+//     myTempChart.chart.load({
+//         columns: [['data', 100]]
+//     });
+// }, 5000);

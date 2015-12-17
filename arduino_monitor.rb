@@ -15,7 +15,9 @@ def arduino_read_temp
 end
 
 EM.run do
-  ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
+  # ws = Faye::WebSocket::Client.new('ws://shrouded-cliffs-5129.herokuapp.com/faye')
+
+    ws = Faye::WebSocket::Client.new('ws://localhost:9292/faye')
 
   EM.add_periodic_timer(1) do
     if ws
