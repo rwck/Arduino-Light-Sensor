@@ -26,7 +26,7 @@ var myChart = {
          min: 0, // 0 is default, //can handle negative min e.g. vacuum / voltage / current flow / rate of change
          max: 100, // 100 is default
          units: ' %',
-         width: 39 // for adjusting arc thickness
+         width: 100 // for adjusting arc thickness
     },
     color: {
       pattern: ['#FF0000', '#F97600', '#F6C600', '#60B044'], // the three color levels for the percentage values.
