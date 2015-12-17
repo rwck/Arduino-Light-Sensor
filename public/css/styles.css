@@ -79,10 +79,10 @@ button:focus {
   box-shadow: none;
 }
 
-@media screen only (min-width: 500px) {
+@media (min-width: 500px) {
   h1 {
     font-size: 4rem;
-  };
+  }
   h2 {
     font-size: 2rem;
   }
