@@ -59,7 +59,7 @@ h2 {
 
 .switch-box {
   width: 100%;
-  position: relative;
+  text-align: center;
 }
 
 button:focus {
@@ -67,7 +67,7 @@ button:focus {
 }
 
 .my-button {
-  margin: 0 auto;
+  padding: 1.5rem;
   border: none;
   background-color: yellow;
   box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.59);
@@ -75,4 +75,6 @@ button:focus {
 
 .my-button:active {
   box-shadow: none;
+  background-color: black;
+  color: yellow;
 }
