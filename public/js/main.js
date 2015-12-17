@@ -78,10 +78,12 @@ function dayCSS() {
 
 function spinMeCSS() {
   $(".main-container").addClass("spinner");
+  $(".a-class").hide();
 }
 
 function unSpinMeCSS() {
   $(".main-container").removeClass("spinner");
+  $(".a-class").show();
 }
 
 function freakyCSS() {
