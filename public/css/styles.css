@@ -57,6 +57,22 @@ h2 {
 
 }
 
+.switch-box {
+  width: 100%;
+  position: relative;
+}
+
+button:focus {
+  outline: none;
+}
+
 .my-button {
+  margin: 0 auto;
+  border: none;
   background-color: yellow;
+  box-shadow: 4px 4px 12px 0px rgba(0,0,0,0.59);
+}
+
+.my-button:active {
+  box-shadow: none;
 }
