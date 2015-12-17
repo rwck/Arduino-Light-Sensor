@@ -36,7 +36,7 @@ EM.run do
   arduino = Arduino.new
 
   ws.on :message do |event|
-    p "Got a message!!!!!!!"
+    p event.text
   end
 
   EM.add_periodic_timer(0.25) do
