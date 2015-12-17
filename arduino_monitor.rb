@@ -35,7 +35,7 @@ EM.run do
 
   arduino = Arduino.new
 
-  EM.add_periodic_timer(0.25) do
+  EM.add_periodic_timer(0.2) do
     if ws
       p 'sending'
       ws.send({ data: { light: arduino.light, temp: arduino.temp }, channel: '/arduino' }.to_json)
