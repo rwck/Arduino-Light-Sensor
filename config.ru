@@ -4,7 +4,7 @@ require 'puma'
 require 'faye'
 require 'faye/websocket'
 require 'logger'
-require_relative 'echo_server'
+# require_relative 'echo_server'
 require_relative 'sinatra_sockets'
 
 Faye::WebSocket.load_adapter('puma')
