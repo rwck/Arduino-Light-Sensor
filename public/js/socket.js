@@ -28,7 +28,14 @@ var myReading = {};
 
 var subscription = client.subscribe('/arduino', function(data) {
   console.log("Sensors:", data);
-  // $("#blob").html(data.light);
+  console.log(data.light);
+  if (data.light < 200) {
+    console.log("getting dark");
+    nightCSS();
+  } else {
+    console.log("getting light again");
+    dayCSS();
+  };
   myChart.chart.load({
     columns: [
       ['data', (data.light/1024) * 100]

@@ -22,8 +22,6 @@ function turnYellow() {
   $(".main-container").removeClass().addClass("main-container switched-on");
 }
 
-
-
 function bounceHandlers() {
   bounceHeading();
   bounceLight();
@@ -57,5 +55,25 @@ function bounceTemp() {
   });
 }
 
-// testLightLevel();
-// switchCSS();
+function bounceEverything() {
+  $(".main-container").addClass("bounce");
+  setTimeout(
+    function() {
+      $(".main-container").removeClass("bounce");
+    }, 2000);
+}
+
+function nightCSS() {
+  $(".main-container").addClass("night");
+  $(".c3-gauge-value").css({fill: "#fff"});
+}
+
+function dayCSS() {
+  $(".main-container").removeClass("night");
+  $(".c3-gauge-value").css({fill: "#000"});
+}
+
+$(document).ready(function() {
+  bounceHandlers();
+  bounceEverything();
+});

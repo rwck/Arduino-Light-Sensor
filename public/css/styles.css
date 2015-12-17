@@ -16,6 +16,10 @@ h2 {
   font-size: 2rem;
 }
 
+.footer-not-working {
+  display: none;
+}
+
 .invisible {
   display: none;
 }
@@ -30,4 +34,13 @@ h2 {
 
 .footer p {
   text-align: center;
+}
+
+.night {
+  background-color: #352941;
+  color: white;
+}
+
+.night p {
+  color: white;
 }
