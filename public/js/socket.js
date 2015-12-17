@@ -12,9 +12,9 @@ var myReading = {};
 var subscription = client.subscribe('/arduino', function(data) {
   console.log("Sensors:", data);
   console.log(data.light);
-  if (data.light < 150) {
+  if (data.light < 100) {
     playSanta();
-    freakyCSS();
+    spinMeCSS();
   }
   if (data.light < 300) {
     console.log("getting dark");
@@ -22,6 +22,7 @@ var subscription = client.subscribe('/arduino', function(data) {
   } else {
     console.log("getting light again");
     dayCSS();
+    unSpinMeCSS();
   };
   myChart.chart.load({
     columns: [

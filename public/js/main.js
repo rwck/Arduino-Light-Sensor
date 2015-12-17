@@ -69,14 +69,18 @@ function dayCSS() {
   });
 }
 
+function spinMeCSS() {
+  $(".main-container").addClass("spinner");
+}
+
+function unSpinMeCSS() {
+  $(".main-container").removeClass("spinner");
+}
+
 function freakyCSS() {
-  setTimeout(
-    function() {
-      $(".main-container").css({
-        transform: "rotateY(180deg) rotateX(180deg)"
-      }).css("background-color", "yellow"), 1000;
-    }
-  )
+  $(".main-container").css({
+    transform: "rotateY(180deg) rotateX(180deg)"
+  }).css("background-color", "yellow");
   setTimeout(
     function() {
       $(".main-container").css({
