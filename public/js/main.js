@@ -17,8 +17,8 @@ function turnYellow() {
 function placeHandlers() {
   switchHandler();
   bounceHeading();
-  bounceLight();
-  bounceTemp();
+  // bounceLight();
+  // bounceTemp();
 }
 
 function switchHandler() {
