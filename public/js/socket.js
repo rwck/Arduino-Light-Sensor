@@ -28,7 +28,7 @@ var myReading = {};
 var subscription = client.subscribe('/arduino', function(data) {
   console.log("Sensors:", data);
   console.log(data.light);
-  if (data.light < 200) {
+  if (data.light < 300) {
     console.log("getting dark");
     nightCSS();
   } else {
