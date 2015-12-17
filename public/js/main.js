@@ -77,11 +77,10 @@ function freakyCSS() {
     function() {
       $(".main-container").css({
         transform: "rotateY(180deg)"
-      }).css("background-color", "blue"), 500;
+      }).css("background-color", "blue"), 1000;
     }
   )
 }
-
 
 
 $(document).ready(function() {
