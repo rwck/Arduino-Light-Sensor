@@ -5,6 +5,9 @@
 
 h1 {
   font-size: 2rem;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
 }
 
 @media (min-width: 600) {
