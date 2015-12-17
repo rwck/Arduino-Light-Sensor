@@ -28,28 +28,34 @@
 
 @-ms-keyframes spin {
   from {
-    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotateZ(0deg);
   }
   to {
-    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform: rotateZ(360deg);
   }
 }
 
 @-moz-keyframes spin {
   from {
-    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotateZ(0deg);
   }
   to {
-    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform: rotateZ(360deg);
   }
 }
 
 @-webkit-keyframes spin {
   from {
-    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    transform: rotateZ(0deg);
   }
   to {
-    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transform: rotateZ(360deg);
   }
 }
 
@@ -61,6 +67,5 @@
   to {
     transform: rotate(360deg);
     transform: rotateZ(360deg);
-
   }
 }
