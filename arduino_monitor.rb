@@ -43,6 +43,7 @@ EM.run do
     if ws
       p 'sending'
       ws.send({ data: { light: arduino.light, temp: arduino.temp }, channel: '/arduino' }.to_json)
+
     else p 'no socket present'
     end
   end
