@@ -3,19 +3,13 @@
   /*border: 1px dotted pink;*/
 }
 
-h1 {
-  font-size: 2rem;
-  text-align: center;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 700;
-}
 
-@media (min-width: 600) {
+@media (max-width: 500) {
   h1 {
+    font-size: 2rem;
     text-align: center;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    font-size: 4rem;
   }
   h2 {
     text-align: center;
@@ -71,5 +65,14 @@ h1 {
   }
   .my-button:active {
     box-shadow: none;
+  }
+}
+
+@media (min-width: 501) {
+  h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
   }
 }
