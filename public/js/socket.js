@@ -37,8 +37,10 @@ var subscription = client.subscribe('/arduino', function(data) {
 });
 
 function switchOn() {
-  var publication = client.publish('/faye', {text: "Hi there from the browser"});
+  var publication = client.publish('/arduino', {text: "Hi there from the browser"});
   publication.then(function() {
-    alert("sent message back to arduino")
+    alert("sent message back to arduino");
+  }, function(error) {
+    alert("There was an error: " + error.message);
   });
 }
