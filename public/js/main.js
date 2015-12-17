@@ -70,16 +70,20 @@ function dayCSS() {
 }
 
 function freakyCSS() {
-  $(".main-container").css({
-    transform: "rotateY(180deg) rotateX(180deg)"
-  }).css("background-color", "yellow");
+  setTimeout(
+    function() {
+      $(".main-container").css({
+        transform: "rotateY(180deg) rotateX(180deg)"
+      }).css("background-color", "yellow"), 1000;
+    }
+  )
   setTimeout(
     function() {
       $(".main-container").css({
         transform: "rotateY(180deg)"
       }).css("background-color", "blue"), 1000;
     }
-  )
+  );
 }
 
 
