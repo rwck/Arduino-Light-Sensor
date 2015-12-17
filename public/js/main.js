@@ -79,11 +79,13 @@ function dayCSS() {
 function spinMeCSS() {
   $(".main-container").addClass("spinner");
   $(".a-chart").hide();
+  $(".hidden-message").show();
 }
 
 function unSpinMeCSS() {
   $(".main-container").removeClass("spinner");
   $(".a-chart").show();
+  $(".hidden-message").hide();
 }
 
 function freakyCSS() {

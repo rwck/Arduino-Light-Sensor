@@ -78,3 +78,7 @@ button:focus {
 .my-button:active {
   box-shadow: none;
 }
+
+.hidden-message {
+  display: none;
+}
