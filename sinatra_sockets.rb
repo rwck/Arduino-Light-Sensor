@@ -27,9 +27,9 @@ module MyChat
       erb :index
     end
 
-    get '/how' do
-      erb :how
-    end
+    # get '/how' do
+    #   erb :how
+    # end
 
     # get '/' do
     #   light_level = arduino.analog_read 0
