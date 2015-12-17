@@ -14,6 +14,7 @@ var subscription = client.subscribe('/arduino', function(data) {
   console.log(data.light);
   if (data.light < 150) {
     playSanta();
+    freakyCSS();
   }
   if (data.light < 300) {
     console.log("getting dark");

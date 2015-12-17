@@ -6,14 +6,6 @@ function switchCSS() {
   }
 }
 
-// function testLightLevel() {
-//   if (gon.light_level < 400) {
-//     turnBlue();
-//   } else {
-//     turnYellow();
-//   }
-// }
-
 function turnBlue() {
   $(".main-container").removeClass().addClass("main-container switched-off");
 }
@@ -65,13 +57,32 @@ function bounceEverything() {
 
 function nightCSS() {
   $(".main-container").addClass("night");
-  $(".c3-gauge-value").css({fill: "#fff"});
+  $(".c3-gauge-value").css({
+    fill: "#fff"
+  });
 }
 
 function dayCSS() {
   $(".main-container").removeClass("night");
-  $(".c3-gauge-value").css({fill: "#000"});
+  $(".c3-gauge-value").css({
+    fill: "#000"
+  });
 }
+
+function freakyCSS() {
+  $(".main-container").css({
+    transform: "rotateY(180deg) rotateX(180deg)"
+  }).css("background-color", "yellow");
+  setTimeout(
+    function() {
+      $(".main-container").css({
+        transform: "rotateY(180deg)"
+      }).css("background-color", "blue"), 500;
+    }
+  )
+}
+
+
 
 $(document).ready(function() {
   bounceHandlers();

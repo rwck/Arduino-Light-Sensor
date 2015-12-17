@@ -44,3 +44,15 @@ h2 {
 .night p {
   color: white;
 }
+
+
+.blue {
+  width: 250;
+  height: 250;
+  transform:  rotateY(180deg);
+  transform: rotateX(180deg);  
+}
+
+.yellow {
+
+}
