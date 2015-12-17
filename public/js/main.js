@@ -14,10 +14,16 @@ function turnYellow() {
   $(".main-container").removeClass().addClass("main-container switched-on");
 }
 
-function bounceHandlers() {
+function placeHandlers() {
   bounceHeading();
   bounceLight();
   bounceTemp();
+}
+
+function switchHandler() {
+  $("#led-on").click(function() {
+    switchOn();
+  });
 }
 
 function bounceHeading() {
@@ -90,8 +96,7 @@ function freakyCSS() {
   );
 }
 
-
 $(document).ready(function() {
-  bounceHandlers();
+  placeHandlers();
   bounceEverything();
 });
