@@ -1,7 +1,7 @@
 var client = new Faye.Client('http://shrouded-cliffs-5129.herokuapp.com/faye');
 
 var messageSender = new
-Faye.Client('http://shrouded-cliffs-5129.herokuapp.com/message');
+Faye.Client('http://shrouded-cliffs-5129.herokuapp.com/faye');
 
 function getMessage(newMessage) {
   var myMessage = newMessage;
