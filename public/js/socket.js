@@ -37,10 +37,11 @@ var subscription = client.subscribe('/arduino', function(data) {
 });
 
 function switchOn() {
-  var publication = client.publish('/arduino', JSON.stringify({data: {text: "Hi there from the browser"}}));
-  alert(client);
+  var publication = client.publish('/arduino', {text: "Hi there from the browser"});
+  console.log(publication);
   publication.then(function() {
-    alert("sent message back to arduino");
+    console.log(publication);
+    console.log("sent message back to arduino");
   }, function(error) {
     alert("There was an error: " + error.message);
   });
