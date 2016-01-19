@@ -23,25 +23,25 @@ function placeHandlers() {
 }
 
 function buttonHandler() {
-  $("#click-message").click(function() {
+  $("#click-message").click(function(event) {
     switchOn();
   });
 }
 
 function bounceHeading() {
-  $(".heading").mouseenter(function() {
+  $(".heading").mouseenter(function(event) {
     $(this).addClass("bounce");
   });
-  $(".heading").mouseleave(function() {
+  $(".heading").mouseleave(function(event) {
     $(this).removeClass("bounce");
   });
 }
 
 function bounceLight() {
-  $(".bounce-light").mouseenter(function() {
+  $(".bounce-light").mouseenter(function(event) {
     $("#light-chart").addClass("bounce");
   });
-  $(".bounce-light").mouseleave(function() {
+  $(".bounce-light").mouseleave(function(event) {
     $("#light-chart").removeClass("bounce");
   });
 }
@@ -58,7 +58,7 @@ function bounceTemp() {
 function bounceEverything() {
   $(".main-container").addClass("bounce");
   setTimeout(
-    function() {
+    function(event) {
       $(".main-container").removeClass("bounce");
     }, 2000);
 }
