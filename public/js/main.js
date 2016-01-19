@@ -23,7 +23,7 @@ function placeHandlers() {
 }
 
 function buttonHandler() {
-  $("#click-message").click() {
+  $("#click-message").click(function() {
     switchOn();
   });
 }
