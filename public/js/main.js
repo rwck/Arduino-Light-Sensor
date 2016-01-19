@@ -15,14 +15,15 @@ function turnYellow() {
 }
 
 function placeHandlers() {
-  switchHandler();
+  // switchHandler();
   bounceHeading();
+  buttonHandler();
   // bounceLight();
   // bounceTemp();
 }
 
-function switchHandler() {
-  $("#led-on").click(function() {
+function buttonHandler() {
+  $("#click-message").click() {
     switchOn();
   });
 }
