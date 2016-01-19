@@ -11,10 +11,6 @@ module MyChat
 
     Tilt.register Tilt::ERBTemplate, 'html.erb'
 
-    # enable :reloader
-
-    # set :environment, :development
-
     set :environment, :production
     set :bind, 'shrouded-cliffs-5129.herokuapp.com'
 
