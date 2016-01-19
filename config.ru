@@ -10,5 +10,6 @@ require_relative 'sinatra_sockets'
 Faye::WebSocket.load_adapter('puma')
 
 use Faye::RackAdapter, :mount => '/faye', :timeout => 100
+use Faye::RackAdapter, :mount => '/boo', :timeout => 100
 
 run MyChat::SinatraApp
